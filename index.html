@@ -4,55 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KLUS - Laboratorijas Uzskaites Sistēma</title>
-    <link rel="stylesheet" href="style.css"> </head>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
     <div class="form-container" id="form1">
-        <h1>Esi sveicināts<br>KLUS</h1>
+        <img src="assets/lab_logo.png" alt="Laboratorijas logo" class="logo"> <h1>Esi sveicināts<br>KLUS</h1>
         <p>Tavas laboratorijas uzskaites sistēma</p>
         <h2>Ko Tu vēlies darīt šodien?</h2>
-        <button onclick="showLoginForm()">Pieslēgties</button>
-        <button onclick="showPublicData()">Piekļūt publiskiem datiem</button>
+        <div class="button-group">
+            <button class="main-button" onclick="showLoginForm()">Pieslēgties</button>
+            <button class="main-button" onclick="showPublicData()">Piekļūt publiskiem datiem</button>
+        </div>
     </div>
 
     <div class="form-container" id="form2" style="display:none;">
+        <img src="assets/lab_logo.png" alt="Laboratorijas logo" class="logo">
         <h1>Esi sveicināts<br>KLUS</h1>
         <p>Tavas laboratorijas uzskaites sistēma</p>
         <h3>Pieslēgties Ķīmijas laboratorijas uzskaites sistēmai</h3>
-        <input type="text" placeholder="Lietotājvārds">
-        <input type="password" placeholder="Parole">
-        <button>Pieslēgties</button>
-        <p>Neesi vēl reģistrēts?</p>
-        <button>Izveidot profilu</button>
-        <a href="#" onclick="showForm1()">Atpakaļ uz sākumlapu</a>
+        <div class="input-group">
+            <label for="username">Lietotājvārds:</label>
+            <input type="text" id="username" placeholder="Janis Kociņš">
+        </div>
+        <div class="input-group">
+            <label for="password">Parole:</label>
+            <input type="password" id="password" placeholder="******">
+        </div>
+        <div class="button-group">
+            <button class="action-button">Pieslēgties</button>
+        </div>
+        <p class="small-text">Neesi vēl reģistrēts?</p>
+        <button class="secondary-button">Izveidot profilu</button>
+        <a href="#" onclick="showForm1()" class="back-link">Atpakaļ uz sākumlapu</a>
     </div>
 
     <div class="form-container" id="form3" style="display:none;">
-        <a href="#" onclick="showForm1()" class="back-link">Atpakaļ uz sākumlapu</a>
+        <a href="#" onclick="showForm1()" class="back-link">&larr; Atpakaļ uz sākumlapu</a>
         <h1>Publiskā datubāze</h1>
-        <p>Šajā datubāzē Tu vari apskatīt pieejamās vielas un aprīkojumu</p>
+        <p class="description">Šajā datubāzē Tu vari apskatīt pieejamās vielas un aprīkojumu</p>
         <div class="filter-buttons">
-            <button id="showAll">Rādīt visu</button>
-            <button id="showVielas">Rādīt vielas</button>
-            <button id="showEquipment">Rādīt aprīkojumu</button>
+            <button id="showAll" class="filter-button active">Rādīt visu</button>
+            <button id="showVielas" class="filter-button">Rādīt vielas</button>
+            <button id="showEquipment" class="filter-button">Rādīt aprīkojumu</button>
         </div>
-        <table id="dataTable">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nosaukums</th>
-                    <th>Tips</th>
-                    <th>Apakštips</th>
-                    <th>Skaits</th>
-                    <th>Daudzums/Svars</th>
-                    <th>Mērvienības</th>
-                    <th>Komentāri</th>
-                </tr>
-            </thead>
-            <tbody>
-                </tbody>
-        </table>
+        <div class="table-responsive">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nosaukums</th>
+                        <th>Tips</th>
+                        <th>Apakštips</th>
+                        <th>Skaits</th>
+                        <th>Daudzums/Svars</th>
+                        <th>Mērvienības</th>
+                        <th>Komentāri</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
     </div>
 
-    <script src="script.js"></script> </body>
+    <script src="script.js"></script>
+</body>
 </html>
